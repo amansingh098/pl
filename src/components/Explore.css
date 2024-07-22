@@ -1,0 +1,17 @@
+.explore-content {
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px; /* Adjust based on Navbar height */
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .explore-content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .explore-content p {
+    font-size: 1.2em;
+  }
+  
