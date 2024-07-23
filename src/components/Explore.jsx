@@ -1,17 +1,26 @@
-import React from 'react';
+// Explore.jsx
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Explore.css';
-import Navbar from './Navbar';// Adjust the import path according to your folder structure
-import Footer from './Footer';
+import videoSrc from '../assets/TO OUR CHANNEL.mp4'; // Adjust the path to your video file
 
 function Explore() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/home'); // Navigate to Home page after 6 seconds
+    }, 6000);
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, [navigate]);
+
   return (
-    <div>
-      <Navbar />
-      <div className="explore-content">
-        <h1>Explore Page</h1>
-        <p>Welcome to the Explore page!</p>
-      </div>
-      <Footer/>
+    <div className="explore-container">
+      <video className="explore-video" autoPlay muted>
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
